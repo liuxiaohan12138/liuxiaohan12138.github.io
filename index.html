@@ -4,17 +4,19 @@
   <meta charset="utf-8">
   
   
-  <title>Hexo</title>
+  <title>刘潇涵</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
+  <meta name="description" content="刘潇涵个人博客">
+<meta property="og:type" content="website">
+<meta property="og:title" content="刘潇涵">
 <meta property="og:url" content="http://example.com/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:locale" content="en_US">
-<meta property="article:author" content="John Doe">
+<meta property="og:site_name" content="刘潇涵">
+<meta property="og:description" content="刘潇涵个人博客">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="Liu Xiaohan">
 <meta name="twitter:card" content="summary">
   
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    <link rel="alternate" href="/atom.xml" title="刘潇涵" type="application/atom+xml">
   
   
     <link rel="shortcut icon" href="/favicon.png">
@@ -42,7 +44,7 @@
   <div id="header-outer" class="outer">
     <div id="header-title" class="inner">
       <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
+        <a href="/" id="logo">刘潇涵</a>
       </h1>
       
     </div>
@@ -57,12 +59,12 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS 订阅"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
       </div>
     </div>
   </div>
@@ -70,84 +72,6 @@
 
       <div class="outer">
         <section id="main">
-  
-    <article id="post-Java/Java" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/04/18/Java/Java/" class="article-date">
-  <time class="dt-published" datetime="2022-04-18T15:44:33.569Z" itemprop="datePublished">2022-04-18</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="Java笔记"><a href="#Java笔记" class="headerlink" title="Java笔记"></a>Java笔记</h1><p>[TOC]</p>
-<h2 id="字符串处理"><a href="#字符串处理" class="headerlink" title="字符串处理"></a>字符串处理</h2><p>1.多个空格替换为一个空格</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">str.replaceAll( &quot;\\s+&quot;, &quot; &quot; );</span><br></pre></td></tr></table></figure>
-
-<p>2.删除最后一个字符</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">str.substring(0, buf.length()-1)</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="多线程数据传递"><a href="#多线程数据传递" class="headerlink" title="多线程数据传递"></a>多线程数据传递</h2><p>1.通过构造函数传递</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">public class MyThread extends Thread</span><br><span class="line">&#123;</span><br><span class="line">	private String name;</span><br><span class="line">	public MyThread1(String name)</span><br><span class="line">	&#123;</span><br><span class="line">	   this.name = name;</span><br><span class="line">	&#125;</span><br><span class="line">	public void run()</span><br><span class="line">	&#123;</span><br><span class="line">	   System.out.println(&quot;hello &quot; + name);</span><br><span class="line">	&#125;</span><br><span class="line">	public static void main(String[] args)</span><br><span class="line">	&#123;</span><br><span class="line">	   Thread thread = new MyThread(&quot;world&quot;);</span><br><span class="line">	   thread.start();        </span><br><span class="line">	 &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>2.通过变量和方法传递</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">public class MyThread2 implements Runnable</span><br><span class="line">&#123;</span><br><span class="line">    private String name;</span><br><span class="line">    public void setName(String name)</span><br><span class="line">    &#123;</span><br><span class="line">        this.name = name;</span><br><span class="line">    &#125;</span><br><span class="line">    public void run()</span><br><span class="line">    &#123;</span><br><span class="line">        System.out.println(&quot;hello &quot; + name);</span><br><span class="line">    &#125;</span><br><span class="line">    public static void main(String[] args)</span><br><span class="line">    &#123;</span><br><span class="line">        MyThread2 myThread = new MyThread2();</span><br><span class="line">        myThread.setName(&quot;world&quot;);</span><br><span class="line">        Thread thread = new Thread(myThread);</span><br><span class="line">        thread.start();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>3.调用回调函数传递数据</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">package mythread;</span><br><span class="line"> </span><br><span class="line">class Data</span><br><span class="line">&#123;</span><br><span class="line">    public int value = 0;</span><br><span class="line">&#125;</span><br><span class="line">class Work</span><br><span class="line">&#123;</span><br><span class="line">    public void process(Data data, Integer numbers)</span><br><span class="line">    &#123;</span><br><span class="line">        for (int n : numbers)</span><br><span class="line">        &#123;</span><br><span class="line">            data.value += n;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">public class MyThread3 extends Thread</span><br><span class="line">&#123;</span><br><span class="line">    private Work work;</span><br><span class="line"> </span><br><span class="line">    public MyThread3(Work work)</span><br><span class="line">    &#123;</span><br><span class="line">        this.work = work;</span><br><span class="line">    &#125;</span><br><span class="line">    public void run()</span><br><span class="line">    &#123;</span><br><span class="line">        java.util.Random random = new java.util.Random();</span><br><span class="line">        Data data = new Data();</span><br><span class="line">        int n1 = random.nextInt(1000);</span><br><span class="line">        int n2 = random.nextInt(2000);</span><br><span class="line">        int n3 = random.nextInt(3000);</span><br><span class="line">        work.process(data, n1, n2, n3);   // 使用回调函数</span><br><span class="line">        System.out.println(String.valueOf(n1) + &quot;+&quot; + String.valueOf(n2) + &quot;+&quot;</span><br><span class="line">                + String.valueOf(n3) + &quot;=&quot; + data.value);</span><br><span class="line">    &#125;</span><br><span class="line">    public static void main(String[] args)</span><br><span class="line">    &#123;</span><br><span class="line">        Thread thread = new MyThread3(new Work());</span><br><span class="line">        thread.start();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>4.从线程中获取返回值的方法</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">public class MyThread3 extends Thread &#123;</span><br><span class="line">    private String value1;</span><br><span class="line">    private String value2;</span><br><span class="line"></span><br><span class="line">    public void run() &#123;</span><br><span class="line">        value1 = &quot;value1&quot;;</span><br><span class="line">        value2 = &quot;value2&quot;;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) throws Exception &#123;</span><br><span class="line">        MyThread3 thread = new MyThread3();</span><br><span class="line">        thread.start();</span><br><span class="line">        // join方法会等待线程执行结束后才会继续执行</span><br><span class="line">        thread.join();</span><br><span class="line">        System.out.println(&quot;value1:&quot; + thread.value1);</span><br><span class="line">        System.out.println(&quot;value2:&quot; + thread.value2);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/04/18/Java/Java/" data-id="cl24w9bzr0001ecqnd6q1b339" data-title="" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-README" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/04/18/README/" class="article-date">
-  <time class="dt-published" datetime="2022-04-18T15:44:33.564Z" itemprop="datePublished">2022-04-18</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="Notes"><a href="#Notes" class="headerlink" title="Notes"></a>Notes</h1><p>简单的笔记记录，记录我逐渐成长的过程。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/04/18/README/" data-id="cl24w9bzl0000ecqnho029ixl" data-title="" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
   
     <article id="post-WindowsCommand/WindowsCommand" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
@@ -161,13 +85,14 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h1 id="windows命令行记录"><a href="#windows命令行记录" class="headerlink" title="windows命令行记录"></a>windows命令行记录</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"># 查看所有本地服务的端口号和进程号</span><br><span class="line">netstat -ano</span><br><span class="line"></span><br><span class="line"># 查看进程</span><br><span class="line">tasklist</span><br><span class="line"></span><br><span class="line"># 过滤 不区分大小写</span><br><span class="line">findstr code /i</span><br><span class="line"></span><br><span class="line"># 杀进程</span><br><span class="line">taskkill /pid 进程号 /f</span><br><span class="line"></span><br><span class="line"># 在windows下查看某个运行程序（或进程）的命令行参数</span><br><span class="line">wmic process get caption,commandline /value</span><br><span class="line"></span><br><span class="line"># 查询某一个进程的命令行参数</span><br><span class="line">wmic process where caption=&quot;cmd.exe&quot; get caption,commandline /value</span><br></pre></td></tr></table></figure>
+        <p>title:windows命令行记录</p>
+<h1 id="windows命令行记录"><a href="#windows命令行记录" class="headerlink" title="windows命令行记录"></a>windows命令行记录</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"># 查看所有本地服务的端口号和进程号</span><br><span class="line">netstat -ano</span><br><span class="line"></span><br><span class="line"># 查看进程</span><br><span class="line">tasklist</span><br><span class="line"></span><br><span class="line"># 过滤 不区分大小写</span><br><span class="line">findstr code /i</span><br><span class="line"></span><br><span class="line"># 杀进程</span><br><span class="line">taskkill /pid 进程号 /f</span><br><span class="line"></span><br><span class="line"># 在windows下查看某个运行程序（或进程）的命令行参数</span><br><span class="line">wmic process get caption,commandline /value</span><br><span class="line"></span><br><span class="line"># 查询某一个进程的命令行参数</span><br><span class="line">wmic process where caption=&quot;cmd.exe&quot; get caption,commandline /value</span><br></pre></td></tr></table></figure>
 
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/04/18/WindowsCommand/WindowsCommand/" data-id="cl24w9bzt0002ecqn07x24pse" data-title="" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/04/18/WindowsCommand/WindowsCommand/" data-id="cl24x02w400004cqn1d4uess6" data-title="" class="article-share-link">分享</a>
       
       
       
@@ -195,9 +120,9 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
+    <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">四月 2022</a></li></ul>
     </div>
   </div>
 
@@ -205,17 +130,9 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">最新文章</h3>
     <div class="widget">
       <ul>
-        
-          <li>
-            <a href="/2022/04/18/Java/Java/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2022/04/18/README/">(no title)</a>
-          </li>
         
           <li>
             <a href="/2022/04/18/WindowsCommand/WindowsCommand/">(no title)</a>
@@ -234,7 +151,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       
-      &copy; 2022 John Doe<br>
+      &copy; 2022 Liu Xiaohan<br>
       Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
