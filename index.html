@@ -73,6 +73,108 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Java/Java" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/04/20/Java/Java/" class="article-date">
+  <time class="dt-published" datetime="2022-04-20T06:19:31.720Z" itemprop="datePublished">2022-04-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/04/20/Java/Java/">java笔记</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>[TOC]</p>
+<h1 id="字符串处理"><a href="#字符串处理" class="headerlink" title="字符串处理"></a>字符串处理</h1><p>1.多个空格替换为一个空格</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">str.replaceAll( &quot;\\s+&quot;, &quot; &quot; );</span><br></pre></td></tr></table></figure>
+
+<p>2.删除最后一个字符</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">str.substring(0, buf.length()-1)</span><br></pre></td></tr></table></figure>
+
+<p>3.删除最后一个斜线后的字符串</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// http://stackoverflow.com/questions/ask -&gt; http://stackoverflow.com/questions/</span><br><span class="line">String str=&quot;http://stackoverflow.com/questions/ask&quot;;</span><br><span class="line">int index=str.lastIndexOf(&#x27;/&#x27;);</span><br><span class="line">str = str.substring(0,index);</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="多线程数据传递"><a href="#多线程数据传递" class="headerlink" title="多线程数据传递"></a>多线程数据传递</h1><p>1.通过构造函数传递</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">public class MyThread extends Thread</span><br><span class="line">&#123;</span><br><span class="line">	private String name;</span><br><span class="line">	public MyThread1(String name)</span><br><span class="line">	&#123;</span><br><span class="line">	   this.name = name;</span><br><span class="line">	&#125;</span><br><span class="line">	public void run()</span><br><span class="line">	&#123;</span><br><span class="line">	   System.out.println(&quot;hello &quot; + name);</span><br><span class="line">	&#125;</span><br><span class="line">	public static void main(String[] args)</span><br><span class="line">	&#123;</span><br><span class="line">	   Thread thread = new MyThread(&quot;world&quot;);</span><br><span class="line">	   thread.start();        </span><br><span class="line">	 &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>2.通过变量和方法传递</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">public class MyThread2 implements Runnable</span><br><span class="line">&#123;</span><br><span class="line">    private String name;</span><br><span class="line">    public void setName(String name)</span><br><span class="line">    &#123;</span><br><span class="line">        this.name = name;</span><br><span class="line">    &#125;</span><br><span class="line">    public void run()</span><br><span class="line">    &#123;</span><br><span class="line">        System.out.println(&quot;hello &quot; + name);</span><br><span class="line">    &#125;</span><br><span class="line">    public static void main(String[] args)</span><br><span class="line">    &#123;</span><br><span class="line">        MyThread2 myThread = new MyThread2();</span><br><span class="line">        myThread.setName(&quot;world&quot;);</span><br><span class="line">        Thread thread = new Thread(myThread);</span><br><span class="line">        thread.start();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>3.调用回调函数传递数据</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">package mythread;</span><br><span class="line"> </span><br><span class="line">class Data</span><br><span class="line">&#123;</span><br><span class="line">    public int value = 0;</span><br><span class="line">&#125;</span><br><span class="line">class Work</span><br><span class="line">&#123;</span><br><span class="line">    public void process(Data data, Integer numbers)</span><br><span class="line">    &#123;</span><br><span class="line">        for (int n : numbers)</span><br><span class="line">        &#123;</span><br><span class="line">            data.value += n;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">public class MyThread3 extends Thread</span><br><span class="line">&#123;</span><br><span class="line">    private Work work;</span><br><span class="line"> </span><br><span class="line">    public MyThread3(Work work)</span><br><span class="line">    &#123;</span><br><span class="line">        this.work = work;</span><br><span class="line">    &#125;</span><br><span class="line">    public void run()</span><br><span class="line">    &#123;</span><br><span class="line">        java.util.Random random = new java.util.Random();</span><br><span class="line">        Data data = new Data();</span><br><span class="line">        int n1 = random.nextInt(1000);</span><br><span class="line">        int n2 = random.nextInt(2000);</span><br><span class="line">        int n3 = random.nextInt(3000);</span><br><span class="line">        work.process(data, n1, n2, n3);   // 使用回调函数</span><br><span class="line">        System.out.println(String.valueOf(n1) + &quot;+&quot; + String.valueOf(n2) + &quot;+&quot;</span><br><span class="line">                + String.valueOf(n3) + &quot;=&quot; + data.value);</span><br><span class="line">    &#125;</span><br><span class="line">    public static void main(String[] args)</span><br><span class="line">    &#123;</span><br><span class="line">        Thread thread = new MyThread3(new Work());</span><br><span class="line">        thread.start();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>4.从线程中获取返回值的方法</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">public class MyThread3 extends Thread &#123;</span><br><span class="line">    private String value1;</span><br><span class="line">    private String value2;</span><br><span class="line"></span><br><span class="line">    public void run() &#123;</span><br><span class="line">        value1 = &quot;value1&quot;;</span><br><span class="line">        value2 = &quot;value2&quot;;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) throws Exception &#123;</span><br><span class="line">        MyThread3 thread = new MyThread3();</span><br><span class="line">        thread.start();</span><br><span class="line">        // join方法会等待线程执行结束后才会继续执行</span><br><span class="line">        thread.join();</span><br><span class="line">        System.out.println(&quot;value1:&quot; + thread.value1);</span><br><span class="line">        System.out.println(&quot;value2:&quot; + thread.value2);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/04/20/Java/Java/" data-id="cl276r0up00015kqnec9uf9id" data-title="java笔记" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-WindowsCommand/WindowsCommand" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/04/20/WindowsCommand/WindowsCommand/" class="article-date">
+  <time class="dt-published" datetime="2022-04-20T06:19:31.713Z" itemprop="datePublished">2022-04-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/04/20/WindowsCommand/WindowsCommand/">windows命令行记录</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"># 查看所有本地服务的端口号和进程号</span><br><span class="line">netstat -ano</span><br><span class="line"></span><br><span class="line"># 查看进程</span><br><span class="line">tasklist</span><br><span class="line"></span><br><span class="line"># 过滤 不区分大小写</span><br><span class="line">findstr code /i</span><br><span class="line"></span><br><span class="line"># 杀进程</span><br><span class="line">taskkill /pid 进程号 /f</span><br><span class="line"></span><br><span class="line"># 在windows下查看某个运行程序（或进程）的命令行参数</span><br><span class="line">wmic process get caption,commandline /value</span><br><span class="line"></span><br><span class="line"># 查询某一个进程的命令行参数</span><br><span class="line">wmic process where caption=&quot;cmd.exe&quot; get caption,commandline /value</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/04/20/WindowsCommand/WindowsCommand/" data-id="cl276r0us00025kqnh7hpc6xa" data-title="windows命令行记录" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-README" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2022/04/19/README/" class="article-date">
@@ -102,106 +204,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/04/19/README/" data-id="cl24yhnr300001sqn9ndm0q6y" data-title="随手记录" class="article-share-link">分享</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-Java/Java" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/04/19/Java/Java/" class="article-date">
-  <time class="dt-published" datetime="2022-04-18T16:08:35.000Z" itemprop="datePublished">2022-04-19</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/04/19/Java/Java/">java笔记</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>[TOC]</p>
-<h1 id="字符串处理"><a href="#字符串处理" class="headerlink" title="字符串处理"></a>字符串处理</h1><p>1.多个空格替换为一个空格</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">str.replaceAll( &quot;\\s+&quot;, &quot; &quot; );</span><br></pre></td></tr></table></figure>
-
-<p>2.删除最后一个字符</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">str.substring(0, buf.length()-1)</span><br></pre></td></tr></table></figure>
-
-
-
-<h1 id="多线程数据传递"><a href="#多线程数据传递" class="headerlink" title="多线程数据传递"></a>多线程数据传递</h1><p>1.通过构造函数传递</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">public class MyThread extends Thread</span><br><span class="line">&#123;</span><br><span class="line">	private String name;</span><br><span class="line">	public MyThread1(String name)</span><br><span class="line">	&#123;</span><br><span class="line">	   this.name = name;</span><br><span class="line">	&#125;</span><br><span class="line">	public void run()</span><br><span class="line">	&#123;</span><br><span class="line">	   System.out.println(&quot;hello &quot; + name);</span><br><span class="line">	&#125;</span><br><span class="line">	public static void main(String[] args)</span><br><span class="line">	&#123;</span><br><span class="line">	   Thread thread = new MyThread(&quot;world&quot;);</span><br><span class="line">	   thread.start();        </span><br><span class="line">	 &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>2.通过变量和方法传递</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">public class MyThread2 implements Runnable</span><br><span class="line">&#123;</span><br><span class="line">    private String name;</span><br><span class="line">    public void setName(String name)</span><br><span class="line">    &#123;</span><br><span class="line">        this.name = name;</span><br><span class="line">    &#125;</span><br><span class="line">    public void run()</span><br><span class="line">    &#123;</span><br><span class="line">        System.out.println(&quot;hello &quot; + name);</span><br><span class="line">    &#125;</span><br><span class="line">    public static void main(String[] args)</span><br><span class="line">    &#123;</span><br><span class="line">        MyThread2 myThread = new MyThread2();</span><br><span class="line">        myThread.setName(&quot;world&quot;);</span><br><span class="line">        Thread thread = new Thread(myThread);</span><br><span class="line">        thread.start();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>3.调用回调函数传递数据</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">package mythread;</span><br><span class="line"> </span><br><span class="line">class Data</span><br><span class="line">&#123;</span><br><span class="line">    public int value = 0;</span><br><span class="line">&#125;</span><br><span class="line">class Work</span><br><span class="line">&#123;</span><br><span class="line">    public void process(Data data, Integer numbers)</span><br><span class="line">    &#123;</span><br><span class="line">        for (int n : numbers)</span><br><span class="line">        &#123;</span><br><span class="line">            data.value += n;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">public class MyThread3 extends Thread</span><br><span class="line">&#123;</span><br><span class="line">    private Work work;</span><br><span class="line"> </span><br><span class="line">    public MyThread3(Work work)</span><br><span class="line">    &#123;</span><br><span class="line">        this.work = work;</span><br><span class="line">    &#125;</span><br><span class="line">    public void run()</span><br><span class="line">    &#123;</span><br><span class="line">        java.util.Random random = new java.util.Random();</span><br><span class="line">        Data data = new Data();</span><br><span class="line">        int n1 = random.nextInt(1000);</span><br><span class="line">        int n2 = random.nextInt(2000);</span><br><span class="line">        int n3 = random.nextInt(3000);</span><br><span class="line">        work.process(data, n1, n2, n3);   // 使用回调函数</span><br><span class="line">        System.out.println(String.valueOf(n1) + &quot;+&quot; + String.valueOf(n2) + &quot;+&quot;</span><br><span class="line">                + String.valueOf(n3) + &quot;=&quot; + data.value);</span><br><span class="line">    &#125;</span><br><span class="line">    public static void main(String[] args)</span><br><span class="line">    &#123;</span><br><span class="line">        Thread thread = new MyThread3(new Work());</span><br><span class="line">        thread.start();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>4.从线程中获取返回值的方法</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">public class MyThread3 extends Thread &#123;</span><br><span class="line">    private String value1;</span><br><span class="line">    private String value2;</span><br><span class="line"></span><br><span class="line">    public void run() &#123;</span><br><span class="line">        value1 = &quot;value1&quot;;</span><br><span class="line">        value2 = &quot;value2&quot;;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) throws Exception &#123;</span><br><span class="line">        MyThread3 thread = new MyThread3();</span><br><span class="line">        thread.start();</span><br><span class="line">        // join方法会等待线程执行结束后才会继续执行</span><br><span class="line">        thread.join();</span><br><span class="line">        System.out.println(&quot;value1:&quot; + thread.value1);</span><br><span class="line">        System.out.println(&quot;value2:&quot; + thread.value2);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/04/19/Java/Java/" data-id="cl24yhnra00011sqn6ljw69xm" data-title="java笔记" class="article-share-link">分享</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-WindowsCommand/WindowsCommand" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/04/19/WindowsCommand/WindowsCommand/" class="article-date">
-  <time class="dt-published" datetime="2022-04-18T16:08:35.000Z" itemprop="datePublished">2022-04-19</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/04/19/WindowsCommand/WindowsCommand/">windows命令行记录</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"># 查看所有本地服务的端口号和进程号</span><br><span class="line">netstat -ano</span><br><span class="line"></span><br><span class="line"># 查看进程</span><br><span class="line">tasklist</span><br><span class="line"></span><br><span class="line"># 过滤 不区分大小写</span><br><span class="line">findstr code /i</span><br><span class="line"></span><br><span class="line"># 杀进程</span><br><span class="line">taskkill /pid 进程号 /f</span><br><span class="line"></span><br><span class="line"># 在windows下查看某个运行程序（或进程）的命令行参数</span><br><span class="line">wmic process get caption,commandline /value</span><br><span class="line"></span><br><span class="line"># 查询某一个进程的命令行参数</span><br><span class="line">wmic process where caption=&quot;cmd.exe&quot; get caption,commandline /value</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/04/19/WindowsCommand/WindowsCommand/" data-id="cl24yhnrc00021sqn9d69flgm" data-title="windows命令行记录" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2022/04/19/README/" data-id="cl276r0ue00005kqnc0v75v8s" data-title="随手记录" class="article-share-link">分享</a>
       
       
       
@@ -244,15 +247,15 @@
       <ul>
         
           <li>
+            <a href="/2022/04/20/Java/Java/">java笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2022/04/20/WindowsCommand/WindowsCommand/">windows命令行记录</a>
+          </li>
+        
+          <li>
             <a href="/2022/04/19/README/">随手记录</a>
-          </li>
-        
-          <li>
-            <a href="/2022/04/19/Java/Java/">java笔记</a>
-          </li>
-        
-          <li>
-            <a href="/2022/04/19/WindowsCommand/WindowsCommand/">windows命令行记录</a>
           </li>
         
       </ul>
