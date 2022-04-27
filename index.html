@@ -73,10 +73,10 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-Java/Java" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-WindowsCommand/WindowsCommand" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2022/04/20/Java/Java/" class="article-date">
-  <time class="dt-published" datetime="2022-04-20T06:19:31.720Z" itemprop="datePublished">2022-04-20</time>
+    <a href="/2022/04/27/WindowsCommand/WindowsCommand/" class="article-date">
+  <time class="dt-published" datetime="2022-04-27T01:48:36.482Z" itemprop="datePublished">2022-04-27</time>
 </a>
     
   </div>
@@ -87,7 +87,94 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/04/20/Java/Java/">java笔记</a>
+      <a class="p-name article-title" href="/2022/04/27/WindowsCommand/WindowsCommand/">windows命令行记录</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"># 查看所有本地服务的端口号和进程号</span><br><span class="line">netstat -ano</span><br><span class="line"></span><br><span class="line"># 查看进程</span><br><span class="line">tasklist</span><br><span class="line"></span><br><span class="line"># 过滤 不区分大小写</span><br><span class="line">findstr code /i</span><br><span class="line"></span><br><span class="line"># 杀进程</span><br><span class="line">taskkill /pid 进程号 /f</span><br><span class="line"></span><br><span class="line"># 在windows下查看某个运行程序（或进程）的命令行参数</span><br><span class="line">wmic process get caption,commandline /value</span><br><span class="line"></span><br><span class="line"># 查询某一个进程的命令行参数</span><br><span class="line">wmic process where caption=&quot;cmd.exe&quot; get caption,commandline /value</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/04/27/WindowsCommand/WindowsCommand/" data-id="cl2gx5i210004ogqn9c5s6gd9" data-title="windows命令行记录" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Web/Web" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/04/27/Web/Web/" class="article-date">
+  <time class="dt-published" datetime="2022-04-27T01:48:36.473Z" itemprop="datePublished">2022-04-27</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/04/27/Web/Web/">Web笔记</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="Node命令"><a href="#Node命令" class="headerlink" title="Node命令"></a>Node命令</h1><p>1.下载依赖</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure>
+
+<p>2.运行</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run dev</span><br></pre></td></tr></table></figure>
+
+<p>3.打包</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run build</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/04/27/Web/Web/" data-id="cl2gx5i1x0003ogqn6un50jai" data-title="Web笔记" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Java/Java" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/04/27/Java/Java/" class="article-date">
+  <time class="dt-published" datetime="2022-04-27T01:48:36.465Z" itemprop="datePublished">2022-04-27</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/04/27/Java/Java/">java笔记</a>
     </h1>
   
 
@@ -120,10 +207,28 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">public class MyThread3 extends Thread &#123;</span><br><span class="line">    private String value1;</span><br><span class="line">    private String value2;</span><br><span class="line"></span><br><span class="line">    public void run() &#123;</span><br><span class="line">        value1 = &quot;value1&quot;;</span><br><span class="line">        value2 = &quot;value2&quot;;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) throws Exception &#123;</span><br><span class="line">        MyThread3 thread = new MyThread3();</span><br><span class="line">        thread.start();</span><br><span class="line">        // join方法会等待线程执行结束后才会继续执行</span><br><span class="line">        thread.join();</span><br><span class="line">        System.out.println(&quot;value1:&quot; + thread.value1);</span><br><span class="line">        System.out.println(&quot;value2:&quot; + thread.value2);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
+
+<h1 id="WebSocket"><a href="#WebSocket" class="headerlink" title="WebSocket"></a>WebSocket</h1><p>pom.xml添加依赖</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-boot-starter-websocket&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+
+<p>添加配置类</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@Configuration</span><br><span class="line">public class WebSocketConfig &#123;</span><br><span class="line">    @Bean</span><br><span class="line">    public ServerEndpointExporter serverEndpointExporter() &#123;</span><br><span class="line">        return new ServerEndpointExporter();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>添加服务类</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line">@ServerEndpoint(&quot;/websocket&quot;)</span><br><span class="line">@Component</span><br><span class="line">public class WebSocketServer &#123;</span><br><span class="line"></span><br><span class="line">    static Logger logger = LoggerFactory.getLogger(WebSocketServer.class);</span><br><span class="line">    </span><br><span class="line">    private static CopyOnWriteArraySet&lt;WebSocketServer&gt; webSocketSet = new CopyOnWriteArraySet&lt;WebSocketServer&gt;();</span><br><span class="line">    </span><br><span class="line">    private Session session;</span><br><span class="line"></span><br><span class="line">    @OnOpen</span><br><span class="line">    public void onOpen(Session session) &#123;</span><br><span class="line">        this.session = session;</span><br><span class="line">        webSocketSet.add(this);</span><br><span class="line">        try &#123;</span><br><span class="line">            sendMessage(&quot;连接成功&quot;);</span><br><span class="line">        &#125; catch (IOException e) &#123;</span><br><span class="line">            logger.error(&quot;IO异常&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @OnClose</span><br><span class="line">    public void onClose() &#123;</span><br><span class="line">        webSocketSet.remove(this);</span><br><span class="line">        logger.info(&quot;连接关闭&quot;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @OnMessage</span><br><span class="line">    public void onMessage(String message) &#123;</span><br><span class="line">        for (WebSocketServer item : webSocketSet) &#123;</span><br><span class="line">            try &#123;</span><br><span class="line">                item.sendMessage(message);</span><br><span class="line">            &#125; catch (IOException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @OnError</span><br><span class="line">    public void onError(Throwable error) &#123;</span><br><span class="line">        error.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static void sendInfo(String message)&#123;</span><br><span class="line">        for (WebSocketServer item : webSocketSet) &#123;</span><br><span class="line">            try &#123;</span><br><span class="line">                item.sendMessage(message);</span><br><span class="line">            &#125; catch (IOException e) &#123;</span><br><span class="line">                continue;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void sendMessage(String message) throws IOException &#123;</span><br><span class="line">        this.session.getBasicRemote().sendText(message);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="maven"><a href="#maven" class="headerlink" title="maven"></a>maven</h1><p>依赖搜索</p>
+<p><a target="_blank" rel="noopener" href="https://developer.aliyun.com/mvn/search">https://developer.aliyun.com/mvn/search</a></p>
+<p>打包</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn clean install -Dmaven.test.skip=true</span><br></pre></td></tr></table></figure>
+
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/04/20/Java/Java/" data-id="cl276r0up00015kqnec9uf9id" data-title="java笔记" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2022/04/27/Java/Java/" data-id="cl2gx5i1t0002ogqn8rzo6h85" data-title="java笔记" class="article-share-link">分享</a>
       
       
       
@@ -135,10 +240,10 @@
 
 
   
-    <article id="post-WindowsCommand/WindowsCommand" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-Docker/Docker" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2022/04/20/WindowsCommand/WindowsCommand/" class="article-date">
-  <time class="dt-published" datetime="2022-04-20T06:19:31.713Z" itemprop="datePublished">2022-04-20</time>
+    <a href="/2022/04/27/Docker/Docker/" class="article-date">
+  <time class="dt-published" datetime="2022-04-27T01:48:36.455Z" itemprop="datePublished">2022-04-27</time>
 </a>
     
   </div>
@@ -149,7 +254,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/04/20/WindowsCommand/WindowsCommand/">windows命令行记录</a>
+      <a class="p-name article-title" href="/2022/04/27/Docker/Docker/">Docker使用</a>
     </h1>
   
 
@@ -157,13 +262,38 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h1 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"># 查看所有本地服务的端口号和进程号</span><br><span class="line">netstat -ano</span><br><span class="line"></span><br><span class="line"># 查看进程</span><br><span class="line">tasklist</span><br><span class="line"></span><br><span class="line"># 过滤 不区分大小写</span><br><span class="line">findstr code /i</span><br><span class="line"></span><br><span class="line"># 杀进程</span><br><span class="line">taskkill /pid 进程号 /f</span><br><span class="line"></span><br><span class="line"># 在windows下查看某个运行程序（或进程）的命令行参数</span><br><span class="line">wmic process get caption,commandline /value</span><br><span class="line"></span><br><span class="line"># 查询某一个进程的命令行参数</span><br><span class="line">wmic process where caption=&quot;cmd.exe&quot; get caption,commandline /value</span><br></pre></td></tr></table></figure>
+        <p>1.创建镜像</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker login</span><br><span class="line">docker pull centos:7</span><br></pre></td></tr></table></figure>
+
+<p>2.运行容器</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -itd --net=host 镜像ID(IMAGE ID) /bin/bash</span><br></pre></td></tr></table></figure>
+
+<p>3.启动容器</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker start  容器id</span><br></pre></td></tr></table></figure>
+
+<p>4.进入容器</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker exec -it 容器ID(CONTAUNER ID)  bash</span><br></pre></td></tr></table></figure>
+
+<p>5.安装网络工具和ssh</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">yum install -y net-tools</span><br><span class="line">yum install openssh</span><br><span class="line">yum -y install openssh-clients</span><br><span class="line">yum install openssh-server</span><br></pre></td></tr></table></figure>
+
+<p>6.关闭容器</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker stop 容器名称</span><br></pre></td></tr></table></figure>
+
+<p>7.提交</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker commit 容器ID 镜像名:latest</span><br></pre></td></tr></table></figure>
+
+<p>8.查看镜像</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker images</span><br></pre></td></tr></table></figure>
+
+<p>9.查看容器</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker ps</span><br></pre></td></tr></table></figure>
 
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/04/20/WindowsCommand/WindowsCommand/" data-id="cl276r0us00025kqnh7hpc6xa" data-title="windows命令行记录" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2022/04/27/Docker/Docker/" data-id="cl2gx5i1o0001ogqngo434mwk" data-title="Docker使用" class="article-share-link">分享</a>
       
       
       
@@ -204,7 +334,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/04/19/README/" data-id="cl276r0ue00005kqnc0v75v8s" data-title="随手记录" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2022/04/19/README/" data-id="cl2gx5i1b0000ogqn9v41b5zk" data-title="随手记录" class="article-share-link">分享</a>
       
       
       
@@ -247,11 +377,19 @@
       <ul>
         
           <li>
-            <a href="/2022/04/20/Java/Java/">java笔记</a>
+            <a href="/2022/04/27/WindowsCommand/WindowsCommand/">windows命令行记录</a>
           </li>
         
           <li>
-            <a href="/2022/04/20/WindowsCommand/WindowsCommand/">windows命令行记录</a>
+            <a href="/2022/04/27/Web/Web/">Web笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2022/04/27/Java/Java/">java笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2022/04/27/Docker/Docker/">Docker使用</a>
           </li>
         
           <li>
