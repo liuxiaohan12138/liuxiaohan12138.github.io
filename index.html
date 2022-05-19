@@ -73,10 +73,10 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-Web/Web" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-WindowsCommand/WindowsCommand" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2022/05/06/Web/Web/" class="article-date">
-  <time class="dt-published" datetime="2022-05-06T02:55:38.124Z" itemprop="datePublished">2022-05-06</time>
+    <a href="/2022/05/19/WindowsCommand/WindowsCommand/" class="article-date">
+  <time class="dt-published" datetime="2022-05-19T14:27:34.766Z" itemprop="datePublished">2022-05-19</time>
 </a>
     
   </div>
@@ -87,7 +87,47 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/05/06/Web/Web/">Web笔记</a>
+      <a class="p-name article-title" href="/2022/05/19/WindowsCommand/WindowsCommand/">windows命令行记录</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"># 查看所有本地服务的端口号和进程号</span><br><span class="line">netstat -ano</span><br><span class="line"></span><br><span class="line"># 查看进程</span><br><span class="line">tasklist</span><br><span class="line"></span><br><span class="line"># 过滤 不区分大小写</span><br><span class="line">findstr code /i</span><br><span class="line"></span><br><span class="line"># 杀进程</span><br><span class="line">taskkill /pid 进程号 /f</span><br><span class="line"></span><br><span class="line"># 在windows下查看某个运行程序（或进程）的命令行参数</span><br><span class="line">wmic process get caption,commandline /value</span><br><span class="line"></span><br><span class="line"># 查询某一个进程的命令行参数</span><br><span class="line">wmic process where caption=&quot;cmd.exe&quot; get caption,commandline /value</span><br><span class="line"></span><br><span class="line"># 复制文件夹</span><br><span class="line">xcopy 源文件夹路径 目标文件夹路径 /e/h/i/y</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/05/19/WindowsCommand/WindowsCommand/" data-id="cl3d3yscg0004hcrm2fkvdgry" data-title="windows命令行记录" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Web/Web" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/05/19/Web/Web/" class="article-date">
+  <time class="dt-published" datetime="2022-05-19T14:27:34.755Z" itemprop="datePublished">2022-05-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/05/19/Web/Web/">Web笔记</a>
     </h1>
   
 
@@ -105,50 +145,39 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run build</span><br></pre></td></tr></table></figure>
 
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/05/06/Web/Web/" data-id="cl2tuvqcb0003vgqn6b16ggla" data-title="Web笔记" class="article-share-link">分享</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
 
+<h1 id="electron"><a href="#electron" class="headerlink" title="electron"></a>electron</h1><p>1.偷来electron的官方例子</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/electron/electron-quick-start</span><br></pre></td></tr></table></figure>
 
+<p>2.将项目打包，dist文件夹复制到之前的electron项目中</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run build</span><br></pre></td></tr></table></figure>
 
-  
-    <article id="post-WindowsCommand/WindowsCommand" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/05/06/WindowsCommand/WindowsCommand/" class="article-date">
-  <time class="dt-published" datetime="2022-05-06T02:55:38.124Z" itemprop="datePublished">2022-05-06</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/05/06/WindowsCommand/WindowsCommand/">windows命令行记录</a>
-    </h1>
-  
+<p>3.删除electron项目中的index.html</p>
+<p>4.修改main.js</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mainWindow.loadFile(&#x27;index.html&#x27;)</span><br></pre></td></tr></table></figure>
 
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"># 查看所有本地服务的端口号和进程号</span><br><span class="line">netstat -ano</span><br><span class="line"></span><br><span class="line"># 查看进程</span><br><span class="line">tasklist</span><br><span class="line"></span><br><span class="line"># 过滤 不区分大小写</span><br><span class="line">findstr code /i</span><br><span class="line"></span><br><span class="line"># 杀进程</span><br><span class="line">taskkill /pid 进程号 /f</span><br><span class="line"></span><br><span class="line"># 在windows下查看某个运行程序（或进程）的命令行参数</span><br><span class="line">wmic process get caption,commandline /value</span><br><span class="line"></span><br><span class="line"># 查询某一个进程的命令行参数</span><br><span class="line">wmic process where caption=&quot;cmd.exe&quot; get caption,commandline /value</span><br><span class="line"></span><br><span class="line"># 复制文件夹</span><br><span class="line">xcopy 源文件夹路径 目标文件夹路径 /e/h/i/y</span><br></pre></td></tr></table></figure>
+<p>5.执行命令预览效果</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br><span class="line">npm run start</span><br></pre></td></tr></table></figure>
+
+<p>6.下载打包依赖</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install electron-packager</span><br></pre></td></tr></table></figure>
+
+<p>如果报错</p>
+<p>npm ERR! code 1<br>npm ERR! path F:\electron\electron-quick-start\node_modules\electron<br>npm ERR! command failed<br>npm ERR! command C:\Windows\system32\cmd.exe &#x2F;d &#x2F;s &#x2F;c node install.js<br>npm ERR! RequestError: read ECONNRESET</p>
+<p>设置一下本地的python环境变量</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config set python 3.9.6</span><br></pre></td></tr></table></figure>
+
+<p>7.修改package.json的打包命令</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&quot;scripts&quot;: &#123; </span><br><span class="line">&quot;start&quot;: &quot;electron .&quot;, </span><br><span class="line">&quot;packager&quot;: &quot;electron-packager ./ App --platform=win32 --arch=x64 --overwrite&quot;</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+
+<p>8.打包</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run packager</span><br></pre></td></tr></table></figure>
 
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/05/06/WindowsCommand/WindowsCommand/" data-id="cl2tuvqcc0004vgqndaxn1ukn" data-title="windows命令行记录" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2022/05/19/Web/Web/" data-id="cl3d3yscf0003hcrm440dhnmf" data-title="Web笔记" class="article-share-link">分享</a>
       
       
       
@@ -162,8 +191,8 @@
   
     <article id="post-Java/Java" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2022/05/06/Java/Java/" class="article-date">
-  <time class="dt-published" datetime="2022-05-06T02:55:38.108Z" itemprop="datePublished">2022-05-06</time>
+    <a href="/2022/05/19/Java/Java/" class="article-date">
+  <time class="dt-published" datetime="2022-05-19T14:27:34.739Z" itemprop="datePublished">2022-05-19</time>
 </a>
     
   </div>
@@ -174,7 +203,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/05/06/Java/Java/">java笔记</a>
+      <a class="p-name article-title" href="/2022/05/19/Java/Java/">java笔记</a>
     </h1>
   
 
@@ -236,7 +265,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/05/06/Java/Java/" data-id="cl2tuvqca0002vgqnfx82g1cp" data-title="java笔记" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2022/05/19/Java/Java/" data-id="cl3d3yscc0002hcrm0type0ds" data-title="java笔记" class="article-share-link">分享</a>
       
       
       
@@ -250,8 +279,8 @@
   
     <article id="post-Docker/Docker" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2022/05/06/Docker/Docker/" class="article-date">
-  <time class="dt-published" datetime="2022-05-06T02:55:38.077Z" itemprop="datePublished">2022-05-06</time>
+    <a href="/2022/05/19/Docker/Docker/" class="article-date">
+  <time class="dt-published" datetime="2022-05-19T14:27:34.617Z" itemprop="datePublished">2022-05-19</time>
 </a>
     
   </div>
@@ -262,7 +291,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/05/06/Docker/Docker/">Docker使用</a>
+      <a class="p-name article-title" href="/2022/05/19/Docker/Docker/">Docker使用</a>
     </h1>
   
 
@@ -301,7 +330,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/05/06/Docker/Docker/" data-id="cl2tuvqc80001vgqnhflwgvcr" data-title="Docker使用" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2022/05/19/Docker/Docker/" data-id="cl3d3ysc80001hcrmhwum6ddc" data-title="Docker使用" class="article-share-link">分享</a>
       
       
       
@@ -342,7 +371,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/04/19/README/" data-id="cl2tuvqc20000vgqnakwvfwot" data-title="随手记录" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2022/04/19/README/" data-id="cl3d3ysbv0000hcrm8add1v6l" data-title="随手记录" class="article-share-link">分享</a>
       
       
       
@@ -385,19 +414,19 @@
       <ul>
         
           <li>
-            <a href="/2022/05/06/Web/Web/">Web笔记</a>
+            <a href="/2022/05/19/WindowsCommand/WindowsCommand/">windows命令行记录</a>
           </li>
         
           <li>
-            <a href="/2022/05/06/WindowsCommand/WindowsCommand/">windows命令行记录</a>
+            <a href="/2022/05/19/Web/Web/">Web笔记</a>
           </li>
         
           <li>
-            <a href="/2022/05/06/Java/Java/">java笔记</a>
+            <a href="/2022/05/19/Java/Java/">java笔记</a>
           </li>
         
           <li>
-            <a href="/2022/05/06/Docker/Docker/">Docker使用</a>
+            <a href="/2022/05/19/Docker/Docker/">Docker使用</a>
           </li>
         
           <li>
